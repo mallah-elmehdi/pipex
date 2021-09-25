@@ -1,11 +1,12 @@
 
 NAME = pipex
-FLAG =  -Wall -Wextra -Werror
-FILE = util.c
-PPX =  pipex.c
+FLAG = -Wall -Wextra -Werror
+UTIL = util/error.c  util/split.c  util/strjoin.c  util/strlen.c  util/strnstr.c util/calloc.c util/strdup.c
+FILE = ecexution.c cmdpath.c
+PPX = pipex.c
 
 $(NAME):
-	@gcc $(FILE) $(PPX) -o $(NAME)
+	@gcc $(FILE) $(UTIL) $(PPX) -o $(NAME)
 
 all : $(NAME)
 
