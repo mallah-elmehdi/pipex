@@ -8,8 +8,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-int     sys_error();
-int     prg_error(const char *err);
+int sys_error(const char *extra_msg);
+int prg_error(const char *err, char **cmd_w_opt);
 int			delim_length(char const *str, char delim);
 char		**free_splited_str(char **splited_str, int i);
 char		**ft_split(const char *str, char delim);
@@ -19,5 +19,6 @@ int     ft_strlen(const char *str);
 char    *ft_strnstr(const char *str1, const char *str2, size_t n);
 void	*ft_calloc(size_t a, size_t b);
 char    *ft_strdup(const char *str);
+void	free_double(char **double_ptr);
 
 #endif

@@ -1,7 +1,7 @@
 
 NAME = pipex
 FLAG = -Wall -Wextra -Werror
-UTIL = util/error.c  util/split.c  util/strjoin.c  util/strlen.c  util/strnstr.c util/calloc.c util/strdup.c
+UTIL = util/error.c  util/split.c  util/strjoin.c  util/strlen.c  util/strnstr.c util/calloc.c util/strdup.c util/free.c
 FILE = ecexution.c cmdpath.c
 PPX = pipex.c
 
