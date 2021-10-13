@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmdpath.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emallah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 11:11:46 by emallah           #+#    #+#             */
+/*   Updated: 2021/10/13 11:11:48 by emallah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
-char *try_all_paths(char **all_paths, char *cmd)
+char	*try_all_paths(char **all_paths, char *cmd)
 {
-	int i;
-	char *path_w_slash;
-	char *candidate_path;
+	int		i;
+	char	*path_w_slash;
+	char	*candidate_path;
 
 	i = 0;
 	while (all_paths[i])
@@ -24,11 +36,11 @@ char *try_all_paths(char **all_paths, char *cmd)
 	return (NULL);
 }
 
-char *get_cmd_path(char *cmd, char **env)
+char	*get_cmd_path(char *cmd, char **env)
 {
-	char **all_paths;
-	char *cmd_path;
-	int i;
+	int		i;
+	char	**all_paths;
+	char	*cmd_path;
 
 	i = 0;
 	while (env[i])
@@ -38,7 +50,7 @@ char *get_cmd_path(char *cmd, char **env)
 			all_paths = ft_split(env[i] + 5, ':');
 			if (all_paths == NULL)
 				sys_error(NULL);
-			break;
+			break ;
 		}
 		i++;
 	}

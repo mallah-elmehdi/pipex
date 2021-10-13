@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emallah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 11:12:49 by emallah           #+#    #+#             */
+/*   Updated: 2021/10/13 11:12:51 by emallah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "util.h"
 
 void	free_double(char **double_ptr)
@@ -7,8 +19,8 @@ void	free_double(char **double_ptr)
 	i = 0;
 	while (double_ptr[i])
 	{
-        free(double_ptr[i]);
-        i++;
+		free(double_ptr[i]);
+		i++;
 	}
-    free(double_ptr);
+	free(double_ptr);
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: emallah <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/13 11:14:10 by emallah           #+#    #+#              #
+#    Updated: 2021/10/13 11:14:11 by emallah          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 NAME = pipex
 FLAG = -Wall -Wextra -Werror
@@ -6,7 +18,7 @@ FILE = ecexution.c cmdpath.c
 PPX = pipex.c
 
 $(NAME):
-	@gcc -g -fsanitize=address $(FILE) $(UTIL) $(PPX) -o $(NAME)
+	@gcc -g $(FILE) $(UTIL) $(PPX) -o $(NAME)
 
 all : $(NAME)
 

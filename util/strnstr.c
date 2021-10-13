@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emallah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 11:13:26 by emallah           #+#    #+#             */
+/*   Updated: 2021/10/13 11:13:27 by emallah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "util.h"
 
 char	*ft_strnstr(const char *str1, const char *str2, size_t n)
@@ -15,7 +27,7 @@ char	*ft_strnstr(const char *str1, const char *str2, size_t n)
 		{
 			a++;
 			if (str2[a] == '\0')
-				return (&((char*)str1)[i]);
+				return (&((char *)str1)[i]);
 		}
 		i++;
 	}
