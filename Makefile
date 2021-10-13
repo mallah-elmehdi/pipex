@@ -6,7 +6,7 @@ FILE = ecexution.c cmdpath.c
 PPX = pipex.c
 
 $(NAME):
-	@gcc $(FILE) $(UTIL) $(PPX) -o $(NAME)
+	@gcc -g -fsanitize=address $(FILE) $(UTIL) $(PPX) -o $(NAME)
 
 all : $(NAME)
 

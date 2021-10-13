@@ -7,7 +7,6 @@ void cmd_2_exec(char **av, char **env, int *fd)
 	char *cmd2;
 
 	fdout = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-	printf("%d\n", fdout);
 	if (fdout == -1)
 		sys_error(av[4]);
 	cmd_w_opt = ft_split(av[3], ' ');
@@ -18,9 +17,8 @@ void cmd_2_exec(char **av, char **env, int *fd)
 		prg_error("pipex: command not found: ",  cmd_w_opt);
 	dup2(fd[0], STDIN_FILENO);
 	dup2(fdout, STDOUT_FILENO);
-	execve(cmd2, cmd_w_opt, env);
-	free_double(cmd_w_opt);
-	free(cmd2);
+	if (execve(cmd2, cmd_w_opt, env) == -1)
+		sys_error(av[3]);
 }
 
 void cmd_1_exec(char **av, char **env, int *fd)
@@ -30,7 +28,6 @@ void cmd_1_exec(char **av, char **env, int *fd)
 	char *cmd1;
 
 	fdin = open(av[1], O_RDONLY, 0777);
-	printf("%d\n", fdin);
 	if (fdin == -1)
 		sys_error(av[1]);
 	cmd_w_opt = ft_split(av[2], ' ');
@@ -44,7 +41,6 @@ void cmd_1_exec(char **av, char **env, int *fd)
 		prg_error("pipex: command not found: ", cmd_w_opt);
 	dup2(fdin, STDIN_FILENO);
 	dup2(fd[1], STDOUT_FILENO);
-	execve(cmd1, cmd_w_opt, env);
-	free_double(cmd_w_opt);
-	free(cmd1);
+	if(execve(cmd1, cmd_w_opt, env))
+		sys_error(av[2]);
 }

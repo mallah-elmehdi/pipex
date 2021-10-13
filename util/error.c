@@ -13,7 +13,7 @@ int sys_error(const char *extra_msg)
         write(2, extra_msg, ft_strlen(extra_msg));
     }
     write(2, "\n", 1);
-    exit(199);
+    exit(EXIT_FAILURE);
 }
 
 int prg_error(const char *err, char **cmd_w_opt)

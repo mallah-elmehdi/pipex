@@ -39,7 +39,7 @@ char		**ft_split(const char *str, char delim)
 		return (NULL);
 	while (i < delim_length(str, delim) + 1)
 	{
-		splited_str[i] = (char *)ft_calloc(sizeof(char), ft_strlen(str)); 
+		splited_str[i] = (char *)ft_calloc(sizeof(char), ft_strlen(str) + 1); 
 		if (splited_str[i] == NULL)
 			return (free_splited_str(splited_str, i - 1));
 		k = 0;
